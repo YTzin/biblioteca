@@ -15,14 +15,27 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
    ```bash
    git clone <url-do-repositorio>
    cd biblioteca
-2. python -m venv venv
-source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+2. **Crie um ambiente virtual**
+   ```bash
+    python -m venv venv
+    source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+3. **Instale as dependências**
+   ```bash
+   pip install -r requirements.txt
+4. **Realize as migrações do banco de dados**
+   ```bash
+    python manage.py migrate
+5. **Rode o servidor**
+   ```bash
+   python manage.py runserver
 
-3. pip install -r requirements.txt
 
-4. python manage.py migrate
+## Tecnologias Utilizadas
+Django: Framework principal para o desenvolvimento web.
+SQLite: Banco de dados padrão.
+Bootstrap: Usado para estilização da interface.
 
-5. python manage.py runserver
 
 
+   
 
