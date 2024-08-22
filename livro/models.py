@@ -21,6 +21,7 @@ class Livros(models.Model):
     editora = models.CharField(max_length=30)
     data_cadastro = models.DateField(default= date.today)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING, default=1)
+    pdf = models.FileField(upload_to='pdf', null=True, blank=True)
     usuario = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def clean(self):

@@ -31,6 +31,12 @@
   <h1>{{ livro.autor }}</h1>
   <h1>{{ livro.editora }}</h1>
   <h1>{{ livro.categoria }}</h1>
+  <embed src="http://127.0.0.1:8000/media/pdf/revolucao-dos-bichos.pdf" type="application/pdf" width="100%" height="600px" />
+
+
+  <a class="btn btn-primary btn-lg" href="{{ livro.pdf.url }}" download>Baixar PDF</a>
+  <br>
+<br>
   
 
   <!-- Botão para abrir o modal -->
