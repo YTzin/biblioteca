@@ -2,6 +2,7 @@
 {% load filtros %}
 {% block 'titulo' %} Livros {% endblock %}
 {% block 'conteudo' %} 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.6.172/pdf.min.js"></script>
 
 <div style="text-align: center;" class="container">
 
@@ -31,7 +32,8 @@
   <h1>{{ livro.autor }}</h1>
   <h1>{{ livro.editora }}</h1>
   <h1>{{ livro.categoria }}</h1>
-  <embed src="{{ livro.pdf.url }}" type="application/pdf" width="100%" height="600px" />
+  <iframe src="{{ livro.pdf.url }}" width="80%" height="1200px"></iframe>
+  <br>
 
 
   <a class="btn btn-primary btn-lg" href="{{ livro.pdf.url }}" download>Baixar PDF</a>

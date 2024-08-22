@@ -4,31 +4,26 @@
 {% block 'conteudo' %} 
 <div class="container">
   <br>
-    <div class="row">
-        {% for livro in livros %}
-        
-        <div class="col-md">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{livro.img.url}}" alt="Card image cap" style="border-radius: 2%;">
-                <div class="card-body">
-                  <h5 class="card-title">{{livro.nome}}</h5>
-                  <p class="card-text"></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><b>Autor:</b> {{livro.autor}}</li>
-                  <li class="list-group-item"><b>Editora:</b> {{livro.editora}}</li>
-                  <li class="list-group-item"><b>Categoria:</b> {{livro.categoria}}</li>
-                </ul>
-          
-                        
-                          <a href="{% url 'ver_livros' livro.id %}" class="btn btn-lg btn-info">Acessar</a>    
-              </div>
-              <br>
+  <div class="row">
+    {% for livro in livros %}
+      <div class="col-md-4 mb-4">
+        <div class="card" style="width: 100%;">
+          <img class="card-img-top" src="{{ livro.img.url }}" alt="Card image cap" style="border-radius: 2%;">
+          <div class="card-body">
+            <h5 class="card-title">{{ livro.nome }}</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Autor:</b> {{ livro.autor }}</li>
+            <li class="list-group-item"><b>Editora:</b> {{ livro.editora }}</li>
+            <li class="list-group-item"><b>Categoria:</b> {{ livro.categoria }}</li>
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'ver_livros' livro.id %}" class="btn btn-lg btn-info">Acessar</a>
+          </div>
         </div>
- <br>
-
-       
-    </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% endfor%}
 {% endblock %}
